@@ -41,15 +41,18 @@ def ProcessIntToSave(info):
 class StarTechSrapy(scrapy.Spider):
     name = 'startech'
     start_urls = [
-        'https://www.startech.com.bd/laptop-notebook/laptop?page=1',
+        'https://www.startech.com.bd/laptop-notebook/laptop?page=3',
     ]
 
     def parse(self, response):
-        count = 0
-        for productLink in response.css('div.main-content div.product-thumb div.product-info h4.product-name a::attr(href)').extract():
-            yield response.follow(productLink, self.parseProduct)
-            count += 1
-            print count, productLink
+        # count = 0
+        # for productLink in response.css('div.main-content div.product-thumb div.product-info h4.product-name a::attr(href)').extract():
+        #     yield response.follow(productLink, self.parseProduct)
+        #     count += 1
+        #     print count, productLink
+
+        for productListLink in response.css('div.bottom-bar ul.pagination *::attr(href)').extract():
+            yield response.follow(productListLink, self.parse)
         
     
     def parseProduct(self, response):

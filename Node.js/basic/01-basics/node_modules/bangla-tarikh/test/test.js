@@ -1,0 +1,354 @@
+'use strict';
+let expect = require('chai').expect;
+let index = require('../dist/index.js');
+
+describe('Bangla somoy: year()', () => {
+	it('should return 1425', () => {
+		let result = index.year();
+		expect(result).to.equal(1425);
+	});
+
+	it('should return 1424', () => {
+		let result = index.year(new Date(2018, 2, 21, 0, 0, 0));
+		expect(result).to.equal(1424);
+	});
+});
+
+describe('Bangla somoy: yearInBangla()', () => {
+	it('should return ১৪২৫ ', () => {
+		let result = index.yearInBangla();
+		expect(result).to.equal('১৪২৫');
+	});
+
+	it('should return ১৪২৪ ', () => {
+		let result = index.yearInBangla(new Date(2018, 2, 21, 0, 0, 0));
+		expect(result).to.equal('১৪২৪');
+	});
+});
+
+describe('Bangla somoy: month() - for non leapyear', () => {
+	it('should return 12 ', () => {
+		let result = index.month(new Date(2018, 3, 13, 0, 0, 0));
+		expect(result).to.equal(12);
+	});
+
+	it('should return 12 ', () => {
+		let result = index.month(new Date(2018, 2, 15, 0, 0, 0));
+		expect(result).to.equal(12);
+	});
+
+	it('should return 11 ', () => {
+		let result = index.month(new Date(2018, 1, 13, 0, 0, 0));
+		expect(result).to.equal(11);
+	});
+
+	it('should return 11 ', () => {
+		let result = index.month(new Date(2018, 2, 14, 0, 0, 0));
+		expect(result).to.equal(11);
+	});
+
+	it('should return 10 ', () => {
+		let result = index.month(new Date(2018, 1, 12, 0, 0, 0));
+		expect(result).to.equal(10);
+	});
+
+	it('should return 10 ', () => {
+		let result = index.month(new Date(2018, 0, 14, 0, 0, 0));
+		expect(result).to.equal(10);
+	});
+
+	it('should return 9 ', () => {
+		let result = index.month(new Date(2018, 11, 15, 0, 0, 0));
+		expect(result).to.equal(9);
+	});
+
+	it('should return 9 ', () => {
+		let result = index.month(new Date(2018, 0, 13, 0, 0, 0));
+		expect(result).to.equal(9);
+	});
+
+	it('should return 8 ', () => {
+		let result = index.month(new Date(2018, 11, 14, 0, 0, 0));
+		expect(result).to.equal(8);
+	});
+
+	it('should return 8 ', () => {
+		let result = index.month(new Date(2018, 10, 15, 0, 0, 0));
+		expect(result).to.equal(8);
+	});
+
+	it('should return 7 ', () => {
+		let result = index.month(new Date(2018, 9, 16, 0, 0, 0));
+		expect(result).to.equal(7);
+	});
+
+	it('should return 7 ', () => {
+		let result = index.month(new Date(2018, 10, 14, 0, 0, 0));
+		expect(result).to.equal(7);
+	});
+
+	it('should return 6 ', () => {
+		let result = index.month(new Date(2018, 8, 16, 0, 0, 0));
+		expect(result).to.equal(6);
+	});
+
+	it('should return 6 ', () => {
+		let result = index.month(new Date(2018, 9, 15, 0, 0, 0));
+		expect(result).to.equal(6);
+	});
+
+	it('should return 5 ', () => {
+		let result = index.month(new Date(2018, 7, 16, 0, 0, 0));
+		expect(result).to.equal(5);
+	});
+
+	it('should return 5 ', () => {
+		let result = index.month(new Date(2018, 8, 15, 0, 0, 0));
+		expect(result).to.equal(5);
+	});
+
+	it('should return 4 ', () => {
+		let result = index.month(new Date(2018, 6, 16, 0, 0, 0));
+		expect(result).to.equal(4);
+	});
+
+	it('should return 4 ', () => {
+		let result = index.month(new Date(2018, 7, 15, 0, 0, 0));
+		expect(result).to.equal(4);
+	});
+
+	it('should return 3 ', () => {
+		let result = index.month(new Date(2018, 5, 15, 0, 0, 0));
+		expect(result).to.equal(3);
+	});
+
+	it('should return 3 ', () => {
+		let result = index.month(new Date(2018, 6, 15, 0, 0, 0));
+		expect(result).to.equal(3);
+	});
+
+	it('should return 2 ', () => {
+		let result = index.month(new Date(2018, 4, 15, 0, 0, 0));
+		expect(result).to.equal(2);
+	});
+
+	it('should return 2 ', () => {
+		let result = index.month(new Date(2018, 5, 14, 0, 0, 0));
+		expect(result).to.equal(2);
+	});
+
+	it('should return 1 ', () => {
+		let result = index.month(new Date(2018, 3, 14, 0, 0, 0));
+		expect(result).to.equal(1);
+	});
+
+	it('should return 1 ', () => {
+		let result = index.month(new Date(2018, 4, 14, 0, 0, 0));
+		expect(result).to.equal(1);
+	});
+});
+
+describe('Bangla somoy: month() - for leapyear', () => {
+	it('should return 12 ', () => {
+		let result = index.month(new Date(2020, 3, 13, 0, 0, 0));
+		expect(result).to.equal(12);
+	});
+
+	it('should return 12 ', () => {
+		let result = index.month(new Date(2020, 2, 15, 0, 0, 0));
+		expect(result).to.equal(12);
+	});
+
+	it('should return 11 ', () => {
+		let result = index.month(new Date(2020, 1, 13, 0, 0, 0));
+		expect(result).to.equal(11);
+	});
+
+	it('should return 11 ', () => {
+		let result = index.month(new Date(2020, 2, 14, 0, 0, 0));
+		expect(result).to.equal(11);
+	});
+
+	it('should return 10 ', () => {
+		let result = index.month(new Date(2020, 1, 12, 0, 0, 0));
+		expect(result).to.equal(10);
+	});
+
+	it('should return 10 ', () => {
+		let result = index.month(new Date(2020, 0, 14, 0, 0, 0));
+		expect(result).to.equal(10);
+	});
+
+	it('should return 9 ', () => {
+		let result = index.month(new Date(2020, 11, 15, 0, 0, 0));
+		expect(result).to.equal(9);
+	});
+
+	it('should return 9 ', () => {
+		let result = index.month(new Date(2020, 0, 13, 0, 0, 0));
+		expect(result).to.equal(9);
+	});
+
+	it('should return 8 ', () => {
+		let result = index.month(new Date(2020, 11, 14, 0, 0, 0));
+		expect(result).to.equal(8);
+	});
+
+	it('should return 8 ', () => {
+		let result = index.month(new Date(2020, 10, 15, 0, 0, 0));
+		expect(result).to.equal(8);
+	});
+
+	it('should return 7 ', () => {
+		let result = index.month(new Date(2020, 9, 16, 0, 0, 0));
+		expect(result).to.equal(7);
+	});
+
+	it('should return 7 ', () => {
+		let result = index.month(new Date(2020, 10, 14, 0, 0, 0));
+		expect(result).to.equal(7);
+	});
+
+	it('should return 6 ', () => {
+		let result = index.month(new Date(2020, 8, 16, 0, 0, 0));
+		expect(result).to.equal(6);
+	});
+
+	it('should return 6 ', () => {
+		let result = index.month(new Date(2020, 9, 15, 0, 0, 0));
+		expect(result).to.equal(6);
+	});
+
+	it('should return 5 ', () => {
+		let result = index.month(new Date(2020, 7, 16, 0, 0, 0));
+		expect(result).to.equal(5);
+	});
+
+	it('should return 5 ', () => {
+		let result = index.month(new Date(2020, 8, 15, 0, 0, 0));
+		expect(result).to.equal(5);
+	});
+
+	it('should return 4 ', () => {
+		let result = index.month(new Date(2020, 6, 16, 0, 0, 0));
+		expect(result).to.equal(4);
+	});
+
+	it('should return 4 ', () => {
+		let result = index.month(new Date(2020, 7, 15, 0, 0, 0));
+		expect(result).to.equal(4);
+	});
+
+	it('should return 3 ', () => {
+		let result = index.month(new Date(2020, 5, 15, 0, 0, 0));
+		expect(result).to.equal(3);
+	});
+
+	it('should return 3 ', () => {
+		let result = index.month(new Date(2020, 6, 15, 0, 0, 0));
+		expect(result).to.equal(3);
+	});
+
+	it('should return 2 ', () => {
+		let result = index.month(new Date(2020, 4, 15, 0, 0, 0));
+		expect(result).to.equal(2);
+	});
+
+	it('should return 2 ', () => {
+		let result = index.month(new Date(2020, 5, 14, 0, 0, 0));
+		expect(result).to.equal(2);
+	});
+
+	it('should return 1 ', () => {
+		let result = index.month(new Date(2020, 3, 14, 0, 0, 0));
+		expect(result).to.equal(1);
+	});
+
+	it('should return 1 ', () => {
+		let result = index.month(new Date(2020, 4, 14, 0, 0, 0));
+		expect(result).to.equal(1);
+	});
+});
+
+describe('Bangla somoy: monthInBangla()', () => {
+	it('should return ৪ ', () => {
+		let result = index.monthInBangla();
+		expect(result).to.equal('৪');
+	});
+
+	it('should return ১ ', () => {
+		let result = index.monthInBangla(new Date(2018, 3, 30, 0, 0, 0));
+		expect(result).to.equal('১');
+	});
+});
+
+describe('Bangla somoy: monthInBanglaString()', () => {
+	it('should return শ্রাবণ ', () => {
+		let result = index.monthInBanglaString();
+		expect(result).to.equal('শ্রাবণ');
+	});
+
+	it('should return বৈশাখ ', () => {
+		let result = index.monthInBanglaString(new Date(2018, 3, 30, 0, 0, 0));
+		expect(result).to.equal('বৈশাখ');
+	});
+});
+
+describe('Bangla somoy: day()', () => {
+	it('should return 30', () => {
+		let result = index.day();
+		expect(result).to.equal(30);
+	});
+
+	it('should return 29', () => {
+		let result = index.day(new Date(2020, 0, 12, 0, 0, 0));
+		expect(result).to.equal(29);
+	});
+});
+
+describe('Bangla somoy: format("DDD")', () => {
+	it('should return 30', () => {
+		let result = index.day();
+		expect(result).to.equal(30);
+	});
+
+	it('should return ত্রিশে', () => {
+		let result = index.format('DDD');
+		expect(result).to.equal('ত্রিশে');
+	});
+
+	it('should return ৩০', () => {
+		let result = index.format('DDT');
+		expect(result).to.equal('৩০');
+	});
+
+	it('should return ত্রিশে ৩০', () => {
+		let result = index.format('DDD DDT');
+		expect(result).to.equal('ত্রিশে ৩০');
+	});
+
+	it('should return ৩০শে', () => {
+		let result = index.format('DTS');
+		expect(result).to.equal('৩০শে');
+	});
+
+	it('should return ০৩', () => {
+		let result = index.format('DDT', new Date(2018, 6, 18, 0, 0, 0));
+		expect(result).to.equal('০৩');
+	});
+
+	it('should return ০৩ aaa', () => {
+		let result = index.format('DDT aaa', new Date(2018, 6, 18, 0, 0, 0));
+		expect(result).to.equal('০৩ aaa');
+	});
+
+	it('should return ৩০/০৪/১৪২৫', () => {
+		let result = index.format('DT/MMT/YYYYT');
+		expect(result).to.equal('৩০/০৪/১৪২৫');
+	});
+
+	it('should return ৩০শে শ্রাবণ, ১৪২৫', () => {
+		let result = index.format();
+		expect(result).to.equal('৩০শে শ্রাবণ, ১৪২৫');
+	});
+});

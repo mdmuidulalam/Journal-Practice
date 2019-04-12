@@ -1,4 +1,5 @@
 FROM badouralix/python-scrapy
+MAINTAINER  Md. Muidul Alam <2hin2222@gmail.com>
 
 WORKDIR /crawler
 

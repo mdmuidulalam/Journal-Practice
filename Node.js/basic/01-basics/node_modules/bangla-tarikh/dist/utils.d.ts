@@ -1,0 +1,59 @@
+export declare module Utils {
+    /**
+     * Bangla numbers
+     */
+    const banglaNumber: any;
+    /**
+     * Bangla months
+     */
+    const banglaMonthInBengali: any;
+    const banglaMonthInEnglish: any;
+    enum MonthOfYear {
+        Baishakh = 1,
+        Jaishtha = 2,
+        Ashar = 3,
+        Shraban = 4,
+        Bhadra = 5,
+        Ashwin = 6,
+        Kartikh = 7,
+        Aghrahayan = 8,
+        Poush = 9,
+        Magh = 10,
+        Falgun = 11,
+        Chaitra = 12
+    }
+    enum DaysOfMonth {
+        Baishakh = 31,
+        Jaishtha = 31,
+        Ashar = 31,
+        Shraban = 31,
+        Bhadra = 31,
+        Ashwin = 30,
+        Kartikh = 30,
+        Aghrahayan = 30,
+        Poush = 30,
+        Magh = 30,
+        Falgun = 30,
+        Chaitra = 30,
+        FalgunLeapYear = 31
+    }
+    const numberToBanglaDetail: any;
+    const daySuffix: any;
+    const numberOfDaysInBanglaCalender: Array<number>;
+    /**
+     * Returns numeric value to equivalent bangla font in string format
+     * @param data numeric values in string format
+     */
+    function getBanglaDigit(data: string | number): string;
+    /**
+     * Returns noboborsho date for given year
+     * @param year
+     */
+    function getNoboborshoDate(year: number): Date;
+    function isLeapYear(year: number): boolean;
+    /**
+     * Return the date difference of a date with noboborsho of that year
+     * @param date Given date object
+     */
+    function getDateDifferenceWithNoboborsho(date: Date): number;
+}
