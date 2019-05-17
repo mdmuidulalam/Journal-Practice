@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/// Null vale INT_MAX
 int constructNode(vector<int> &nums, vector<int> &st, int a, int b, int idx)
 {
     if (a == b)
